@@ -4,7 +4,7 @@ version: "0.3"
 services: #  a SCONE program with a specific software state and configuration
    - name: volume_service
      image_name: volume-demo:1.0
-     command: python3 /demo/test.py # command to be executed
+     command: python3 /demo/simple.py # command to be executed
      mrenclaves: [$MRENCLAVE]
      pwd: /
 
@@ -16,8 +16,8 @@ images: # usable by services
 
 volumes: # specify file system regions that can be mounted into the file system
   - name: python_volume
-    export:
-      session: volume_policy_benchmark
+   # export:
+     # session: volume_policy_benchmark
 
 security: # The services' security directly depends on CAS' ability to verify that a service process has not been manipulated
   attestation:
